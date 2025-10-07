@@ -1,0 +1,151 @@
+.task-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.task-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.task-form.dark {
+    background: #2c3e50;
+    color: white;
+}
+
+.task-form h2 {
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.task-form.dark h2 {
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.task-form.dark .form-group label {
+    color: white;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #009900;
+}
+
+.task-form.dark .form-input,
+.task-form.dark .form-textarea,
+.task-form.dark .form-select {
+    background: #34495e;
+    border-color: #4a5f7a;
+    color: white;
+}
+
+.task-form.dark .form-input:focus,
+.task-form.dark .form-textarea:focus,
+.task-form.dark .form-select:focus {
+    border-color: #009900;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.cancel-button,
+.submit-button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cancel-button {
+    background: #6c757d;
+    color: white;
+}
+
+.cancel-button:hover {
+    background: #5a6268;
+}
+
+.submit-button {
+    background: linear-gradient(135deg, #009900 0%, #007700 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 153, 0, 0.3);
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #007700 0%, #005500 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 153, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .task-form {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+}
